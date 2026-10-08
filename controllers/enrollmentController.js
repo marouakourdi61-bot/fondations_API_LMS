@@ -13,7 +13,7 @@ const enrollInCourse = async (req, res, next) => {
                 message: "Cours introuvable"
             });
         }
-        
+
 
         // verifier que cours est publié
         if (course.status !== "published") {
@@ -51,6 +51,21 @@ const enrollInCourse = async (req, res, next) => {
     }
 };
 
+
+const getMyEnrollments = async (req, res, next) => {
+    try {
+        const enrollments = await Enrollment.find({
+            learner: req.user.id
+        }).populate("course");
+
+        return res.status(200).json(enrollments);
+
+    } catch (error) {
+        next(error);
+    }
+};
+
 module.exports = {
-    enrollInCourse
+    enrollInCourse,
+    getMyEnrollments
 };

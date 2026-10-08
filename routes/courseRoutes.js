@@ -9,6 +9,8 @@ const {
     getModulesByCourse
 } = require("../controllers/moduleController");
 
+const checkEnrollment = require("../middlewares/checkEnrollment");
+
 const router = express.Router();
 
 /**
@@ -82,7 +84,7 @@ router.get("/", getCourses);
  *       500:
  *         description: Erreur interne du serveur
  */
-router.get("/:id/modules", getModulesByCourse);
+router.get("/:id/modules", checkEnrollment ,getModulesByCourse);
 
 
 /**

@@ -2,6 +2,10 @@ const { z } = require("zod");
 
 const registerSchema = z
     .object({
+        name: z
+            .string({ error: "Name is required" })
+            .trim()
+            .min(2, "Name must contain at least 2 characters"),
         email: z
             .string({ error: "Email is required" })
             .trim()

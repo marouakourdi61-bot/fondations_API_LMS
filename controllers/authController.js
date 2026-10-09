@@ -6,7 +6,7 @@ const SALT_ROUNDS = 10;
 
 const register = async (req, res, next) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, name } = req.body;
 
     const existingUser = await User.findOne({ email });
 
@@ -20,6 +20,7 @@ const register = async (req, res, next) => {
     const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
 
     const user = await User.create({
+      name,
       email,
       password: hashedPassword,
       role: "learner",
@@ -30,6 +31,7 @@ const register = async (req, res, next) => {
       message: "Account created successfully",
       data: {
         id: user._id,
+        name: user.name,
         email: user.email,
         role: user.role,
         status: user.status,
@@ -68,14 +70,10 @@ const login = async (req, res, next) => {
       throw new Error("jwt secret is not configured");
     }
 
-    const token = jwt.sign(
-      { role: user.role },
-      process.env.JWT_SECRET,
-      {
-        subject: user._id.toString(),
-        expiresIn: process.env.JWT_EXPIRES_IN,
-      },
-    );
+    const token = jwt.sign({ role: user.role }, process.env.JWT_SECRET, {
+      subject: user._id.toString(),
+      expiresIn: process.env.JWT_EXPIRES_IN,
+    });
 
     return res.status(200).json({
       status: 200,

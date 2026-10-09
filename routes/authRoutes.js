@@ -22,9 +22,14 @@ const router = express.Router();
  *           schema:
  *             type: object
  *             required:
+ *               - name
  *               - email
  *               - password
  *             properties:
+ *               name:
+ *                 type: string
+ *                 minLength: 2
+ *                 example: Mehdi Karbitou
  *               email:
  *                 type: string
  *                 format: email

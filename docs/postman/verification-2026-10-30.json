@@ -16,7 +16,7 @@
     "inactive_learner_reminder"
   ],
   "limitations": [
-    "No quiz completion email trigger in current backend",
+    "Required forgotten-password email journey has no mounted endpoint; quiz-completion email is not one of the five source requirements",
     "SMTP and cron timing not verified",
     "Second-developer and browser replay pending"
   ],

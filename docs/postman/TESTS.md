@@ -46,7 +46,7 @@ For a manual replay in a disposable environment:
 
 Observed actual log-driver events: `user_registered`, `course_enrolled`, `trainer_summary`, `inactive_learner_reminder`. The enabled reminder job logged one sent message. These observations prove log output, not SMTP delivery or receipt.
 
-**Backend gap:** quiz submission/completion emitted no completion email; source inspection finds no such trigger in the current backend. The Brief 3 requirement for five email situations is therefore not proven complete. This collection documents the current API rather than inventing an email route or changing backend behavior.
+**Source correction and backend gap:** the supplied brief section 4 requires registration, enrollment, forgotten password (token or simulated link), inactive reminder and trainer summary. Earlier advice incorrectly named quiz-completion email; it is not one of these five requirements. Current mounted auth routes are register/login/me, with no forgot/reset journey. Four required log events were observed, so the forgotten-password situation remains unverified and has no mounted implementation in this revision. This collection documents the current API rather than inventing an email route or changing backend behavior.
 
 Cron timing, SMTP/sandbox delivery, deployed Docker replay, frontend browser integration, second-developer import, review and merge are outside this run. The locally imported collection and environment remain secret-free, with `allowWrites=false` and default port 3000 for the normal Docker handoff. Temporary API/database processes and files were removed after verification. No commit or push was made.
 

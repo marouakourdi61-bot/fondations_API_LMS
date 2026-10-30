@@ -91,7 +91,7 @@ For uploads, select a local PDF/JPEG/PNG matching the scenario and choose the co
 | Brief 2 regression paths | Auth, courses, enrollments, modules, resources, uploads and progression | Replay selected success/refusal scenarios |
 | Quiz, attempts, feedback and trainer statistics | API reference, reading journeys, privacy assertions and access scenarios | Linked fixtures and real execution results |
 | Admin configuration, preferences, manual jobs and history | Complete reference including configuration CRUD and both job aliases | Authorized replay in the intended environment |
-| Five email situations and templates | Registration, enrollment, inactive reminders and trainer summaries have actual API triggers | Four log-driver events observed. No quiz-completion email trigger exists in the current backend; the fifth situation remains a backend delivery gap. SMTP delivery is unverified. |
+| Five email situations and templates | Registration, enrollment, inactive reminders and trainer summaries have actual API triggers | Four log-driver events observed. The required forgotten-password email journey has no mounted auth endpoint in the current backend; it remains a delivery gap. Quiz-completion email is not one of the five situations listed in the supplied brief. SMTP delivery is unverified. |
 | Importable collection and environment | Both JSON exports included; empty exported credentials | Fresh import/replay by a second developer |
 | Reproducible setup and frontend contract | This guide plus linked contract/seed instructions | Backend/frontend agreement and browser connection |
 | Delivery on main with review | Files prepared and locally verified | User commit/push, PR review and team-main merge |

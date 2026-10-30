@@ -4,9 +4,14 @@ API REST de gestion de formation en ligne (Learning Management System), dévelop
 
 La plateforme permet à trois rôles principaux de collaborer :
 
-- **Apprenants** : consulter le catalogue, s'inscrire aux cours, consulter les ressources, compléter les modules et suivre leur progression.
-- **Formateurs** : créer et gérer leurs cours, modules et ressources, publier leurs formations et suivre leurs apprenants.
-- **Administrateurs** : gérer la configuration globale, consulter l'historique des tâches planifiées et déclencher manuellement les jobs.
+Frontend developers: start with the [React API contract](docs/react-api-contract.md)
+for endpoint cards, authentication, response formats, demo setup and integration gaps.
+Reviewers can use the [contract handoff](docs/react-api-contract-handoff.md)
+for the backend comparison, verification evidence and remaining delivery steps.
+Brief 3 review tracking: see the [cross-review evidence register](docs/cross-review-evidence.md)
+for PR references, evidence gaps and the pre-merge review checkpoints.
+The [review delivery status](docs/delivery-review-status.md) records the verified
+result and remaining acceptance gaps.
 
 Les développeurs frontend peuvent commencer par le [contrat API React](docs/react-api-contract.md). Les relecteurs peuvent consulter le [handoff du contrat](docs/react-api-contract-handoff.md).
 
